@@ -15,15 +15,16 @@ body{
 }
 
 .name{
+    text-align: center;
     padding-top: 28px;
     padding-left: 47px;
     color: #ffffff;
-    font-size: 25px;
+    font-size: 100px;
     font-family: 'Koulen';
 }
 
 .searchbar {
-    margin-top:100px;
+    margin-top:50px;
     display: block;
     background: white;
     color: rgba(159, 159, 159, 0.63); 
@@ -31,7 +32,7 @@ body{
     width: 800px;
     border-radius: 40px;
     border:#4E7547 4px solid;
-    margin: 20px auto;
+    margin: 100px auto;
     text-decoration: none;
     font-weight: bold;
     line-height: 60px;
