@@ -1,29 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ingredient IQ</title>
+
+<head>
+  <title>Ingredient IQ</title>
   <link rel="icon" type="image/x-icon" href="images/logo.PNG">
   <link href='https://fonts.googleapis.com/css?family=Koulen' rel='stylesheet'>
   <link href="detail.css" rel="stylesheet" type="text/css">
-  </head>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Function to extract query parameters from the URL
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
 
-  <body class="detail_body">
+      var substituteParam = getParameterByName("substitute");
+      var substitute = substituteParam ? JSON.parse(decodeURIComponent(substituteParam)) : null;
+
+      if (substitute) {
+        // Set the substitute name in the h1 element
+        document.querySelector(".picked_name").innerText = substitute.name;
+
+        // Set the advantages and disadvantages content
+        document.querySelector(".proscons.adv .contents").innerText = substitute.pros.join(', ');
+        document.querySelector(".proscons.disadv .contents").innerText = substitute.cons.join(', ');
+
+
+
+        // You can customize the image source based on your data
+        // For now, it assumes you have an "images/ange.png" and "images/devil.png" for advantages and disadvantages
+        var advImage = document.querySelector(".proscons.adv .detailed");
+        var disadvImage = document.querySelector(".proscons.disadv .detailed");
+
+        advImage.src = "images/ange.png";
+        disadvImage.src = "images/devil.png";
+      } else {
+        // Handle the case where the parameter is not provided
+        console.error("Substitute parameter not found");
+      }
+    });
+  </script>
+</head>
+
+<div class="col1"></div>
+<div class="col2"></div>
+<div class="col3"></div>
+<div class="col4"></div>
+
+<body class="detail_body">
+  <a href="home.html" class="logoInDetail">
     <h2 class="name_ing2">Ingredient IQ</h2>
+  </a>
 
-    <h1 class="picked_name">NAME HERE</h1>
+  <h1 class="picked_name">NAME HERE</h1>
 
-    <div class="container">
-        <div class="proscons">
-            <img class="detailed" src="images/ange.png">
-            <p class="adv">Advantages</p>
-            <p class="contents">good</p>
-        </div>
-        <div class="proscons">
-            <img class="detailed" src="images/devil.png">
-            <p class="adv">Disadvantages</p>
-            <p class="contents">toxic</p>
-        </div>
+  <div class="container">
+    <div class="proscons adv">
+      <img class="detailed" src="images/ange.png">
+      <p class="adv">Advantages</p>
+      <ul><li class="contents"></li></ul>
     </div>
-   
-  </body>
+    <div class="proscons disadv">
+      <img class="detailed" src="images/devil.png">
+      <p class="adv">Disadvantages</p>
+      <ul><li class="contents"></li></ul>
+    </div>
+  </div>
+
+</body>
+
 </html>

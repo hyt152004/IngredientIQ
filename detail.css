@@ -13,7 +13,7 @@ body{
 
 .name_ing2{
     padding-left: 47px;
-    color: #4E7547;
+    color: white;
     font-size: 40px;
     font-family: 'Koulen';
     margin: 0;
@@ -26,9 +26,9 @@ body{
 }
 
 .picked_name{
-    color: #4E7547;
+    color: white;
     font-family: 'Koulen';
-    font-size: 100px;
+    font-size: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +45,7 @@ body{
 
 .proscons{
     width: 800px;
-    height: 550px;
+    height: 420px;
     margin: 0;
     margin-inline: 40px;
     background-color: rgba(78, 117, 71, 0.8);
@@ -53,13 +53,17 @@ body{
     border-radius: 50px;
 }
 
+.proscons ul {
+    margin: 0;
+}
+
 .detailed, .adv {
     display: inline-block; 
   }
 
 .detailed{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: 0;
     margin-top: 5%;
     margin-left: 5%;
@@ -67,15 +71,50 @@ body{
 
 .adv{
     font-family: 'Koulen';
-    font-size: 80px;
+    font-size: 50px;
     color: white;
     margin: 0;
     align-items: center;
-    margin-left: 90px;
+    margin-left: 30px;
 }
 
 .contents{
+    font-family: 'Koulen';
     color: white;
-    font-size: 50px;
-    margin: 10px;
+    font-size: 30px;
+    margin: 10px 30px;
 }
+
+@media only screen and (max-width: 1200px) {
+    .detailed{
+        width: 60px;
+        height: 60px;
+    }
+
+    .adv{
+        font-size: 40px;
+        margin-left: 20px;
+    }
+    
+    .contents{
+        font-size: 24px;
+        margin: 10px 25px;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .detailed{
+        width: 50px;
+        height: 50px;
+    }
+
+    .adv{
+        font-size: 36px;
+        margin-left: 20px;
+    }
+    
+    .contents{
+        font-size: 22px;
+        margin: 10px 25px;
+    }
+  }

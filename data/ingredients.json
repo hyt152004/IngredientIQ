@@ -644,7 +644,43 @@
           "cons": ["Different texture", "May need adjustments for cooking time"]
         }
       ]
+    },
+    {
+      "ingredient": "Egg",
+      "substitutes": [
+        {
+          "name": "Applesauce",
+          "quantity_per_egg": "1/4 cup applesauce",
+          "pros": ["Adds moisture", "Works well in baked goods"],
+          "cons": ["May impart a slight fruity flavor", "May affect the texture"]
+        },
+        {
+          "name": "Mashed Banana",
+          "quantity_per_egg": "1/4 cup mashed banana",
+          "pros": ["Adds sweetness", "Suitable for certain baked goods"],
+          "cons": ["May impart a banana flavor", "May alter the color of the dish"]
+        },
+        {
+          "name": "Yogurt",
+          "quantity_per_egg": "1/4 cup yogurt",
+          "pros": ["Adds moisture and richness", "Works well in baking"],
+          "cons": ["May affect the texture", "Adjustments needed for acidity"]
+        },
+        {
+          "name": "Silken Tofu",
+          "quantity_per_egg": "1/4 cup blended silken tofu",
+          "pros": ["Adds moisture", "Suitable for certain baked goods"],
+          "cons": ["May affect the texture", "Adjustments needed for flavor"]
+        },
+        {
+          "name": "Commercial Egg Replacer",
+          "quantity_per_egg": "Follow package instructions",
+          "pros": ["Designed specifically as an egg substitute", "Versatile"],
+          "cons": ["May contain additives", "Availability may vary"]
+        }
+      ]
     }
+    
     
     
   ]

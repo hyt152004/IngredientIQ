@@ -24,15 +24,19 @@ function displayAlternativesForIngredient(ingredientName) {
 
         ingredient.substitutes.forEach(function (substitute) {
           substitutesContainer.innerHTML +=
+            "<a href='detail.html?substitute=" +
+            encodeURIComponent(JSON.stringify(substitute)) +
+            "'>" +
             "<div class='item'>" +
             "<div class='itemName'>" +
             substitute.name +
-            "</div>" + 
+            "</div>" +
             "<div class='itemCalories'>" +
             "Calories: " +
             substitute.calories_per_cup +
             "</div>" +
-            "</div>";
+            "</div>" +
+            "</a>";
         });
       } else {
         document.getElementById("ingredientNameContainer").innerHTML =
@@ -102,37 +106,37 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 // Home Page
 document.addEventListener("DOMContentLoaded", function () {
   var ingredientInput = document.getElementById("ingredientInputHome");
 
   ingredientInput.addEventListener("keydown", function (event) {
     if (event.keyCode === 13) {
-      window.location.href = 'ingredient.html?search=' + encodeURIComponent(ingredientInput.value);
+      window.location.href =
+        "ingredient.html?search=" + encodeURIComponent(ingredientInput.value);
     }
   });
 });
 
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Get the button element
-  var changePageButton = document.getElementById('search_button');
+  var changePageButton = document.getElementById("search_button");
   var ingredientInput = document.getElementById("ingredientInputHome");
 
   // Add a click event listener to the button
-  changePageButton.addEventListener('click', function () {
-      // Navigate to the destination.html page
-      window.location.href = 'ingredient.html?search=' + encodeURIComponent(ingredientInput.value);
+  changePageButton.addEventListener("click", function () {
+    // Navigate to the destination.html page
+    window.location.href =
+      "ingredient.html?search=" + encodeURIComponent(ingredientInput.value);
   });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Get the search bar element on the destination page
-  var ingredientInputNew = document.getElementById('ingredientInput');
+  var ingredientInputNew = document.getElementById("ingredientInput");
 
   // Parse the query parameter to get the search value
-  var searchValue = getParameterByName('search');
+  var searchValue = getParameterByName("search");
 
   // Set the search bar text with the retrieved value
   ingredientInputNew.value = searchValue;
@@ -142,12 +146,12 @@ document.addEventListener('DOMContentLoaded', function () {
 // Function to extract query parameters from the URL
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, '\\$&');
-  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-      results = regex.exec(url);
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
   if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  if (!results[2]) return "";
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -160,48 +164,55 @@ document.addEventListener("DOMContentLoaded", function () {
   var peanutIcon = document.getElementById("peanutIcon");
 
   coffeeBeanIcon.addEventListener("click", function () {
-    window.location.href = 'ingredient.html?search=' + encodeURIComponent("Coffee bean");
+    window.location.href =
+      "ingredient.html?search=" + encodeURIComponent("Coffee bean");
     displayAlternativesForIngredient("coffee bean");
   });
 
   sugarIcon.addEventListener("click", function () {
-    window.location.href = 'ingredient.html?search=' + encodeURIComponent("Sugar");
+    window.location.href =
+      "ingredient.html?search=" + encodeURIComponent("Sugar");
     displayAlternativesForIngredient("sugar");
   });
 
   milkIcon.addEventListener("click", function () {
-    window.location.href = 'ingredient.html?search=' + encodeURIComponent("Milk");
+    window.location.href =
+      "ingredient.html?search=" + encodeURIComponent("Milk");
     displayAlternativesForIngredient("milk");
   });
 
   beefIcon.addEventListener("click", function () {
-    window.location.href = 'ingredient.html?search=' + encodeURIComponent("Beef");
+    window.location.href =
+      "ingredient.html?search=" + encodeURIComponent("Beef");
     displayAlternativesForIngredient("beef");
   });
 
   spinachIcon.addEventListener("click", function () {
-    window.location.href = 'ingredient.html?search=' + encodeURIComponent("Spinach");
+    window.location.href =
+      "ingredient.html?search=" + encodeURIComponent("Spinach");
     displayAlternativesForIngredient("spinach");
   });
 
   flourIcon.addEventListener("click", function () {
-    window.location.href = 'ingredient.html?search=' + encodeURIComponent("Flour");
+    window.location.href =
+      "ingredient.html?search=" + encodeURIComponent("Flour");
     displayAlternativesForIngredient("flour");
   });
 
   peanutIcon.addEventListener("click", function () {
-    window.location.href = 'ingredient.html?search=' + encodeURIComponent("Peanut");
+    window.location.href =
+      "ingredient.html?search=" + encodeURIComponent("Peanut");
     displayAlternativesForIngredient("peanut");
   });
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
   var ingredientInput = document.getElementById("ingredientInputHome");
 
   ingredientInput.addEventListener("keydown", function (event) {
     if (event.keyCode === 13) {
-      window.location.href = 'ingredient.html?search=' + encodeURIComponent(ingredientInput.value);
+      window.location.href =
+        "ingredient.html?search=" + encodeURIComponent(ingredientInput.value);
     }
   });
 });
